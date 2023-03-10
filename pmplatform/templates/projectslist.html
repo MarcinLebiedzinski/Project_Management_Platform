@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+          <div class="py-1">
+            <span class="fs-5 fw-semibold">User details</span>
+          </div>
+
+          <div>
+            <table class="table">
+
+              <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Responsible person</th>
+                    <th scope="col">Is finish</th>
+                    <th scope="col">Details</th>
+                    <th scope="col">View tasks</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+              </thead>
+
+              <tbody class="table-group-divider">
+
+              {% for project in projects %}
+                <tr>
+                    <th scope="row">{{project.name}}</th>
+                    <td>{{project.manager}}</td>
+                    <td>{{project.is_finish}}</td>
+                    <td><a href="#">details</a></td>
+                    <td><a href="#">view tasks</a></td>
+                    <td><a href="#">edit</a></td>
+                    <td><a href="#">delete</a></td>
+                </tr>
+              {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
+
+{% endblock %}
