@@ -85,17 +85,6 @@
               </div>
             </li>
 
-            <li class="mb-1">
-              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#task-collapse" aria-expanded="false">
-                Tasks
-              </button>
-              <div class="collapse show" id="task-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">List of tasks</a></li>
-                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Create new task</a></li>
-                </ul>
-              </div>
-            </li>
 
             <li class="mb-1">
               <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#schedule-collapse" aria-expanded="false">
@@ -103,7 +92,6 @@
               </button>
               <div class="collapse show" id="schedule-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">View schedule</a></li>
                   <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Report time</a></li>
                 </ul>
               </div>
@@ -114,13 +102,24 @@
               </button>
               <div class="collapse show" id="reports-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Project report</a></li>
-                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Task report</a></li>
-                  <li><a href="{% url 'userdetails' %}" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Team details</a></li>
-                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Team member details</a></li>
+                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Report 1</a></li>
+                  <li><a href="#" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Report 2</a></li>
                 </ul>
               </div>
             </li>
+
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#reports-collapse" aria-expanded="false">
+                Team
+              </button>
+              <div class="collapse show" id="reports-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="{% url 'userslist' %}" class="link-dark d-inline-flex p-1 ms-4 text-decoration-none rounded">Team List</a></li>
+                </ul>
+              </div>
+            </li>
+
+
 
             <hr>
             <li class="mb-1">

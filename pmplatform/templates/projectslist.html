@@ -4,7 +4,7 @@
 
 {% block content %}
           <div class="py-1">
-            <span class="fs-5 fw-semibold">User details</span>
+            <span class="fs-5 fw-semibold">Projects list</span>
           </div>
 
           <div>
@@ -17,7 +17,7 @@
                     <th scope="col">Is finish</th>
                     <th scope="col">Details</th>
                     <th scope="col">View tasks</th>
-                    <th scope="col">Edit</th>
+                    <th scope="col">New Task</th>
                     <th scope="col">Delete</th>
                 </tr>
               </thead>
@@ -29,10 +29,10 @@
                     <th scope="row">{{project.name}}</th>
                     <td>{{project.manager}}</td>
                     <td>{{project.is_finish}}</td>
-                    <td><a href="#">details</a></td>
-                    <td><a href="#">view tasks</a></td>
-                    <td><a href="#">edit</a></td>
-                    <td><a href="#">delete</a></td>
+                    <td><a href="{% url 'project_details' project.id %}">details</a></td>
+                    <td><a href="{% url 'tasks_list' project.id %}">view tasks</a></td>
+                    <td><a href="{% url 'task_create' project.id %}">new task</a></td>
+                    <td><a href="{% url 'project_delete' project.id %}">delete</a></td>
                 </tr>
               {% endfor %}
 

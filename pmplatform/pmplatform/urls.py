@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pmplatform_app.views import Submit, Main, UserDetails, Contact, About, ProjectCreate, InvalidData
-from pmplatform_app.views import ProjectsList, ProjectDetails
+from pmplatform_app.views import Submit, Main, UsersList, Contact, About, ProjectCreate, InvalidData
+from pmplatform_app.views import ProjectsList, ProjectDetails, ProjectDelete
+from pmplatform_app.views import TaskCreate, TasksList, TaskDelete, TaskDetails
 
 
 urlpatterns = [
@@ -26,9 +27,14 @@ urlpatterns = [
     path('pmplatform/main/', Main.as_view(), name='main'),
     path('pmplatform/contact/', Contact.as_view(), name='contact'),
     path('pmplatform/about/', About.as_view(), name='about'),
-    path('pmplatform/userdetails/', UserDetails.as_view(), name='userdetails'),
+    path('pmplatform/userslist/', UsersList.as_view(), name='userslist'),
     path('pmplatform/projectcreate/', ProjectCreate.as_view(), name='project_create'),
     path('pmplatform/invaliddata/', InvalidData.as_view(), name='invalid_data'),
     path('pmplatform/projectslist/', ProjectsList.as_view(), name='projects_list'),
-    path('pmplatform/projectdetails/<int:project_id>/', ProjectDetails.as_view(), name='project_details')
+    path('pmplatform/projectdetails/<int:project_id>/', ProjectDetails.as_view(), name='project_details'),
+    path('pmplatform/taskslist/<int:project_id>/', TasksList.as_view(), name='tasks_list'),
+    path('pmplatform/taskcreate/<int:project_id>/', TaskCreate.as_view(), name='task_create'),
+    path('pmplatform/taskdelete/<int:project_id>/<int:task_id>', TaskDelete.as_view(), name='task_delete'),
+    path('pmplatform/taskdetails/<int:task_id>/', TaskDetails.as_view(), name='task_details'),
+    path('pmplatform/projectdelete/<int:project_id>/', ProjectDelete.as_view(), name='project_delete'),
 ]
